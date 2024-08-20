@@ -1,15 +1,23 @@
 BoxLayout:
     orientation: "vertical"
-    Label:
+    BoxLayout:
         size_hint: 1, 0.2
-        text: "first text"
-        background_color: (0, 1, 0, 1)
-        canvas.before:
-            Color:
-                rgba: self.background_color
-            Rectangle:
-                size: self.size
-                pos: self.pos
+        Button:
+            size_hint: 0.2, 1
+            background_color: (0, 0, 0, 1)
+            Image:
+                source: 'D:/ALL_PROJECT/TimurProducten/my-rock/source/LOGO_1.jpg'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+        Label:
+            text: "first text"
+            background_color: (0, 1, 0, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
     BoxLayout:
         ScreenManager:
             id: sm
