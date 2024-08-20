@@ -1,0 +1,54 @@
+BoxLayout:
+    orientation: "vertical"
+    Label:
+        size_hint: 1, 0.2
+        text: "first text"
+        background_color: (0, 1, 0, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        ScreenManager:
+            id: sm
+            MainPage:
+                name: "main"
+            GymPage:
+                name: "gym"
+            TrenerPage:
+                name: "trener"
+            ProfilPage:
+                name: "profil"
+    GridLayout:
+        cols: 4
+        size_hint: 1, 0.2
+        Button:
+            text: 'main'
+            on_release: app.root.ids.sm.current="main"
+        Button:
+            text: 'gym'
+            on_release: app.root.ids.sm.current="gym"
+        Button:
+            text: 'trener'
+            on_release: app.root.ids.sm.current="trener"
+        Button:
+            text: 'profil'
+            on_release: app.root.ids.sm.current="profil"
+
+<MainPage>:
+    Label:
+        text: "mainapp text"
+
+<GymPage>:
+    Label:
+        text: "GYM text"
+
+<TrenerPage>:
+    Label:
+        text: "TRENER text"
+
+<ProfilPage>:
+    Label:
+        text: "profile text"
